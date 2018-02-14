@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Infraestructure", "1. Infraestructure", "{CAC5ACBE-2217-42DE-B077-58049DD098BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Domain", "2. Domain", "{67B9BCAB-0CFC-45ED-8123-D75D7FCD1273}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. API", "3. API", "{40DA4A12-76FB-4E53-BE38-A35B39A6A9AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{6447A964-75FF-4EE3-AE3E-8696B73E7B09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{E138BC0A-40D6-4713-A4CA-E3887ADA9C27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{D835B28E-D328-4AE6-9A59-5E732A971137}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalAppointmentsAPI", "MedicalAppointmentsAPI\MedicalAppointmentsAPI.csproj", "{44A7169A-BD8E-451D-A5D1-10ACBE02E13D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6447A964-75FF-4EE3-AE3E-8696B73E7B09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6447A964-75FF-4EE3-AE3E-8696B73E7B09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6447A964-75FF-4EE3-AE3E-8696B73E7B09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6447A964-75FF-4EE3-AE3E-8696B73E7B09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E138BC0A-40D6-4713-A4CA-E3887ADA9C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E138BC0A-40D6-4713-A4CA-E3887ADA9C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E138BC0A-40D6-4713-A4CA-E3887ADA9C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E138BC0A-40D6-4713-A4CA-E3887ADA9C27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D835B28E-D328-4AE6-9A59-5E732A971137}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D835B28E-D328-4AE6-9A59-5E732A971137}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D835B28E-D328-4AE6-9A59-5E732A971137}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D835B28E-D328-4AE6-9A59-5E732A971137}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44A7169A-BD8E-451D-A5D1-10ACBE02E13D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44A7169A-BD8E-451D-A5D1-10ACBE02E13D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44A7169A-BD8E-451D-A5D1-10ACBE02E13D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44A7169A-BD8E-451D-A5D1-10ACBE02E13D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6447A964-75FF-4EE3-AE3E-8696B73E7B09} = {CAC5ACBE-2217-42DE-B077-58049DD098BE}
+		{E138BC0A-40D6-4713-A4CA-E3887ADA9C27} = {67B9BCAB-0CFC-45ED-8123-D75D7FCD1273}
+		{D835B28E-D328-4AE6-9A59-5E732A971137} = {67B9BCAB-0CFC-45ED-8123-D75D7FCD1273}
+		{44A7169A-BD8E-451D-A5D1-10ACBE02E13D} = {40DA4A12-76FB-4E53-BE38-A35B39A6A9AA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {67FD646E-07A6-4B1E-8EC3-6FB8040009F4}
+	EndGlobalSection
+EndGlobal
