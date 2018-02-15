@@ -40,10 +40,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppointmentServices.cs" />
+    <Compile Include="Interfaces\IAppointmentServices.cs" />
+    <Compile Include="Interfaces\IAssingmentServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\" />
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{6447a964-75ff-4ee3-ae3e-8696b73e7b09}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{e138bc0a-40d6-4713-a4ca-e3887ada9c27}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

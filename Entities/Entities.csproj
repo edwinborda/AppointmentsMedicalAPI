@@ -44,6 +44,7 @@
     <Compile Include="Appointments.cs" />
     <Compile Include="Assigments.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueObjects\TimeFree.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

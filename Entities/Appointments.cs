@@ -30,6 +30,14 @@ namespace Entities
         {
             Active = false;
         }
+
+        public void modifyDoctor(int doctorId)
+        {
+            if (doctorId == 0)
+                return;
+
+            DoctorId = doctorId;
+        }
        
     }
 }

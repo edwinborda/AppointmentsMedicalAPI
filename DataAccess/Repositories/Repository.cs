@@ -27,9 +27,9 @@ namespace DataAccess.Repositories
             return context.Set<TEntity>().Find(id);
         }
 
-        public IEnumerable<TEntity> searchFor(Expression<Func<TEntity, bool>> query)
+        public IQueryable<TEntity> searchFor(Expression<Func<TEntity, bool>> query)
         {
-            return context.Set<TEntity>().Where(query).ToList();
+            return context.Set<TEntity>().Where(query);
         }
 
         public void add(TEntity entity)

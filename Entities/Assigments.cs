@@ -11,7 +11,7 @@ namespace Entities
     [Table("Assigments")]
     public class Assigments
     {
-        private const int appointmentDuration = 10;
+        public const int appointmentDuration = 10;
 
         internal Assigments()
         {
@@ -29,6 +29,16 @@ namespace Entities
             AssigmentFinalDate = assignmentDate.AddMinutes(appointmentDuration);
             
         }
+
+        public Assigments(DateTime reasingmentDate, Appointments appointment)
+        {
+            AssigmentInitialDate = reasingmentDate;
+            AppointmentDuration = appointmentDuration;
+            AssigmentFinalDate = reasingmentDate.AddMinutes(appointmentDuration);
+            Appointments = appointment;
+            AppointmentsId = Appointments.Id;
+        }
+
         public int Id { get; private set; }
 
         public DateTime AssigmentInitialDate { get; private set; }
@@ -38,12 +48,16 @@ namespace Entities
         public int AppointmentsId { get; private set; }
 
         public int AppointmentDuration { get; private set; }
-        public virtual Appointments Appointments { get; private set; }
+
+        public bool Active { get; set; } = true;
+        
+        public virtual Appointments Appointments { get;     set; }
 
         private void createMedicalAppointment(int patientId, int doctorId)
         {
             Appointments = new Appointments(patientId, doctorId);
             AppointmentsId = Appointments.Id;
         }
+
     }
 }
