@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace MedicalAppointmentsAPI.Controllers
 {
-    [RoutePrefix("api/appointments")]
+    [RoutePrefix("api/v1/appointments")]
     public class AssignmentController : ApiController
     {
         private readonly IAssignmentServices assignmentServices;
@@ -19,7 +19,7 @@ namespace MedicalAppointmentsAPI.Controllers
         /// <summary>
         /// Gets the availability of the doctor in a range of time
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Doctor Id</param>
         /// <param name="entity"></param>
         /// <returns></returns>
         [Route("doctors/{id:int}/availables")]

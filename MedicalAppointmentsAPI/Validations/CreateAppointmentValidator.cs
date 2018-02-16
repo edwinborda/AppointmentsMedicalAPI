@@ -22,7 +22,7 @@ namespace MedicalAppointmentsAPI.Validations
                 .Must(MedicalWebServices.ExistsPatient).WithMessage("The patient id doesn't exists in the medical's System");
                 
             
-            RuleFor(c => c.assingmentDate)
+            RuleFor(c => c.assignmentDate)
                 .NotEmpty().WithMessage("The assingment date can't be blank.")
                 .Must(ValidatorTools.BeAValidDate).WithMessage("Invalid date and time")
                 .Must(ValidatorTools.BeInValidDateRange).WithMessage("Date isn't in valid range");

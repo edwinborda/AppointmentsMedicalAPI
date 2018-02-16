@@ -9,7 +9,10 @@ using MedicalAppointmentsAPI.Validations;
 
 namespace MedicalAppointmentsAPI.Controllers
 {
-    [RoutePrefix("api/appointments")]
+    /// <summary>
+    /// Information about API version
+    /// </summary>
+    [RoutePrefix("api/v1/appointments")]
     public class AppointmentsController : ApiController
     {
         private readonly IAppointmentServices appointmentsServices;
@@ -77,7 +80,7 @@ namespace MedicalAppointmentsAPI.Controllers
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
                 
-                appointmentsServices.createAppointment(Convert.ToDateTime(entity.assingmentDate), entity.patientId, entity.doctorId);
+                appointmentsServices.createAppointment(Convert.ToDateTime(entity.assignmentDate), entity.patientId, entity.doctorId);
 
                 return Ok();
             }

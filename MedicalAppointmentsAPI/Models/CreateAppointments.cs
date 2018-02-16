@@ -9,13 +9,20 @@ namespace MedicalAppointmentsAPI
     [Validator(typeof(CreateAppointmentValidator))]
     public class CreateAppointments
     {
-        [Required]
-        public string assingmentDate { get; set; }
+        
+        /// <summary>
+        /// Medical appointment assignment Date
+        /// </summary>
+        public string assignmentDate { get; set; }
 
-        [Required]
+        /// <summary>
+        /// Patient Id
+        /// </summary>
         public int patientId { get; set; }
 
-        [Required]
+        /// <summary>
+        /// Doctor Id
+        /// </summary>
         public int doctorId { get; set; }
     }
 }
