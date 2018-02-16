@@ -9,7 +9,7 @@ namespace DataAccess.Context
 
         }
         
-        public virtual System.Data.Entity.DbSet<Assigments> Assigments { get; set; }
+        public virtual System.Data.Entity.DbSet<Assignments> Assigments { get; set; }
         
     }
 }

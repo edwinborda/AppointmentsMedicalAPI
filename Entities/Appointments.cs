@@ -20,7 +20,7 @@ namespace Entities
 
         public int PatientId { get; private set; }
         
-        public int DoctorId { get; private set; }
+        public int DoctorId { get; set; }
         
         public DateTime CreateAt { get; private set; }
 

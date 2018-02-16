@@ -12,10 +12,10 @@ namespace Services
 {
     public class AppointmentServices : IAppointmentServices
     {
-        private readonly AssingmentRepository assingmentRepository;
+        private readonly AssignmentRepository assingmentRepository;
         public AppointmentServices()
         {
-            assingmentRepository = new AssingmentRepository(new DataAccess.Context.MedicalContext());
+            assingmentRepository = new AssignmentRepository(new DataAccess.Context.MedicalContext());
         }
         public bool cancelAppointment(int appointmentId)
         {
@@ -27,7 +27,7 @@ namespace Services
 
         public bool createAppointment(DateTime assingmentDate, int patientId, int doctorId)
         {
-            var entity = new Assigments(assingmentDate, patientId, doctorId);
+            var entity = new Assignments(assingmentDate, patientId, doctorId);
 
             assingmentRepository.add(entity);
 
@@ -49,7 +49,7 @@ namespace Services
         {
             var appointment = getAppointmentById(appointmentId);
             appointment.modifyDoctor(doctorId);
-            assingmentRepository.add(new Assigments(reasingmentDate, appointment));
+            assingmentRepository.add(new Assignments(reasingmentDate, appointment));
 
             return assingmentRepository.SaveChange();
         }

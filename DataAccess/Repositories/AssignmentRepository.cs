@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    public class AssingmentRepository : Repository<Assigments>
+    public class AssignmentRepository : Repository<Assignments>
     {
-        public AssingmentRepository(MedicalContext medicalContext)
+        public AssignmentRepository(MedicalContext medicalContext)
             : base(medicalContext)
         {
 
@@ -18,9 +18,15 @@ namespace DataAccess.Repositories
 
         public IEnumerable<Appointments> getAllAppointments(bool activeAppointment = true)
         {
-            return context.Assigments.Include("Appointmenst")
+            return context.Assigments.Include("Appointments")
                 .Where(p => p.Appointments.Active == activeAppointment)
                 .Select(p => p.Appointments).ToList();
+        }
+
+        public IEnumerable<Assignments> getAppointmentsByDoctor(int doctorId, bool activeAppointment = true)
+        {
+            return context.Assigments.Include("Appointments")
+                .Where(p => p.Appointments.Active == activeAppointment).ToList();
         }
 
         public void cancelAppointment(int appointmentId)

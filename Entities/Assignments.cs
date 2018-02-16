@@ -8,56 +8,56 @@ using System.Threading.Tasks;
 namespace Entities
 {
 
-    [Table("Assigments")]
-    public class Assigments
+    [Table("Assignments")]
+    public class Assignments
     {
         public const int appointmentDuration = 10;
 
-        internal Assigments()
+        internal Assignments()
         {
 
         }
 
-        public Assigments(DateTime assignmentDate, int patientId, int doctorId)
+        public Assignments(DateTime assignmentDate, int patientId, int doctorId)
         {
             if (assignmentDate < DateTime.Now)
                 throw new ArgumentException("the date of the medical appointment can not be less than today.");
 
             createMedicalAppointment(patientId, doctorId);
-            AssigmentInitialDate = assignmentDate;
+            AssignmentInitialDate = assignmentDate;
             AppointmentDuration = appointmentDuration;
-            AssigmentFinalDate = assignmentDate.AddMinutes(appointmentDuration);
-            
+            AssignmentFinalDate = assignmentDate.AddMinutes(appointmentDuration);
+
         }
 
-        public Assigments(DateTime reasingmentDate, Appointments appointment)
+        public Assignments(DateTime reasingmentDate, Appointments appointment)
         {
-            AssigmentInitialDate = reasingmentDate;
+            AssignmentInitialDate = reasingmentDate;
             AppointmentDuration = appointmentDuration;
-            AssigmentFinalDate = reasingmentDate.AddMinutes(appointmentDuration);
+            AssignmentFinalDate = reasingmentDate.AddMinutes(appointmentDuration);
             Appointments = appointment;
             AppointmentsId = Appointments.Id;
         }
 
         public int Id { get; private set; }
 
-        public DateTime AssigmentInitialDate { get; private set; }
+        public DateTime AssignmentInitialDate { get; private set; }
 
-        public DateTime AssigmentFinalDate { get; private set; }
+        public DateTime AssignmentFinalDate { get; private set; }
 
         public int AppointmentsId { get; private set; }
 
         public int AppointmentDuration { get; private set; }
 
         public bool Active { get; set; } = true;
-        
-        public virtual Appointments Appointments { get;     set; }
+
+        public virtual Appointments Appointments { get; set; }
 
         private void createMedicalAppointment(int patientId, int doctorId)
         {
             Appointments = new Appointments(patientId, doctorId);
             AppointmentsId = Appointments.Id;
         }
-
+        
     }
 }

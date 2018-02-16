@@ -15,8 +15,8 @@ namespace DataAccess.Migrations
 
         protected override void Seed(DataAccess.Context.MedicalContext context)
         {
-            //create one medical appointment with a assingment
-            context.Assigments.AddOrUpdate(new Assigments(DateTime.Now.AddDays(1),17, 3));
+            //create one medical appointment with a assignment
+            context.Assigments.AddOrUpdate(new Assignments(DateTime.Now.AddDays(1),17, 3));
             
         }
     }

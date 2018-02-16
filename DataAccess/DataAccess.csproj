@@ -56,9 +56,13 @@
     <Compile Include="Migrations\201802150356093_AddActiveColumnInAssigment.Designer.cs">
       <DependentUpon>201802150356093_AddActiveColumnInAssigment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802151901309_RenameTableAssignment.cs" />
+    <Compile Include="Migrations\201802151901309_RenameTableAssignment.Designer.cs">
+      <DependentUpon>201802151901309_RenameTableAssignment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\AssingmentRepository.cs" />
+    <Compile Include="Repositories\AssignmentRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="UnityOfWork.cs" />
   </ItemGroup>
@@ -78,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802150356093_AddActiveColumnInAssigment.resx">
       <DependentUpon>201802150356093_AddActiveColumnInAssigment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802151901309_RenameTableAssignment.resx">
+      <DependentUpon>201802151901309_RenameTableAssignment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

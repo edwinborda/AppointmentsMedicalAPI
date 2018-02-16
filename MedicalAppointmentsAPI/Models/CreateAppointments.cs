@@ -1,9 +1,12 @@
 ﻿
 
+using FluentValidation.Attributes;
+using MedicalAppointmentsAPI.Validations;
 using System.ComponentModel.DataAnnotations;
 
 namespace MedicalAppointmentsAPI
 {
+    [Validator(typeof(CreateAppointmentValidator))]
     public class CreateAppointments
     {
         [Required]

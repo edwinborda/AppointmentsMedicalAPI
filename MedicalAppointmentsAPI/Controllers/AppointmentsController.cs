@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using MedicalAppointmentsAPI.Validations;
 
 namespace MedicalAppointmentsAPI.Controllers
 {
@@ -70,9 +71,12 @@ namespace MedicalAppointmentsAPI.Controllers
         {
             try
             {
+                if (entity == null)
+                    ModelState.AddModelError("Entity", "First set the entity");
+
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
-
+                
                 appointmentsServices.createAppointment(Convert.ToDateTime(entity.assingmentDate), entity.patientId, entity.doctorId);
 
                 return Ok();
@@ -97,6 +101,9 @@ namespace MedicalAppointmentsAPI.Controllers
         {
             try
             {
+                if (entity == null)
+                    ModelState.AddModelError("Entity", "First set the entity");
+
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
 

@@ -1,4 +1,6 @@
 ﻿using System.Web.Http;
+using FluentValidation.WebApi;
+
 
 namespace MedicalAppointmentsAPI
 {
@@ -9,6 +11,9 @@ namespace MedicalAppointmentsAPI
         {
             IocConfig.Configure();
             GlobalConfiguration.Configure(WebApiConfig.Register);
+
+            FluentValidationModelValidatorProvider.Configure(GlobalConfiguration.Configuration);
+
         }
     }
 }
