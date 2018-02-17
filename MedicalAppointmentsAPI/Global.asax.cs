@@ -12,7 +12,7 @@ namespace MedicalAppointmentsAPI
             IocConfig.Configure();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FluentValidationModelValidatorProvider.Configure(GlobalConfiguration.Configuration);
-
+            
         }
     }
 }

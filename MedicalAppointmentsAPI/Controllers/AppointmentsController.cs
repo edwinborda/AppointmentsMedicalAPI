@@ -16,6 +16,7 @@ namespace MedicalAppointmentsAPI.Controllers
     public class AppointmentsController : ApiController
     {
         private readonly IAppointmentServices appointmentsServices;
+       
         public AppointmentsController(IAppointmentServices appointmentsServices)
         {
             this.appointmentsServices = appointmentsServices;
@@ -30,13 +31,21 @@ namespace MedicalAppointmentsAPI.Controllers
 
         public IHttpActionResult getAll()
         {
+            try
+            {
+                var listAppointments = appointmentsServices.getAllAppointments();
 
-            var listAppointments = appointmentsServices.getAllAppointments();
+                if (!listAppointments.Any())
+                    return NotFound();
 
-            if (!listAppointments.Any())
-                return NotFound();
+                return Ok(listAppointments);
+            }
+            catch (Exception e)
+            {
+                return InternalServerError(e);
 
-            return Ok(listAppointments);
+            }
+
         }
 
         /// <summary>
@@ -79,7 +88,7 @@ namespace MedicalAppointmentsAPI.Controllers
 
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
-                
+
                 appointmentsServices.createAppointment(Convert.ToDateTime(entity.assignmentDate), entity.patientId, entity.doctorId);
 
                 return Ok();

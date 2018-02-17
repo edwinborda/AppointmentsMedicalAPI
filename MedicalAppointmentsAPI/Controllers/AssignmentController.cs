@@ -10,6 +10,7 @@ namespace MedicalAppointmentsAPI.Controllers
     [RoutePrefix("api/v1/appointments")]
     public class AssignmentController : ApiController
     {
+        
         private readonly IAssignmentServices assignmentServices;
         public AssignmentController(IAssignmentServices assignmentServices)
         {

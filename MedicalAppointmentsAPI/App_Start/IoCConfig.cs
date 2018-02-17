@@ -1,7 +1,5 @@
 ﻿using Autofac;
 using Autofac.Integration.WebApi;
-using Services;
-using Services.Interfaces;
 using System;
 using System.Reflection;
 using System.Web.Http;
@@ -21,6 +19,7 @@ namespace MedicalAppointmentsAPI
             var container = builder.Build();
             var resolver = new AutofacWebApiDependencyResolver(container);
             GlobalConfiguration.Configuration.DependencyResolver = resolver;
+
         }
     }
 }
